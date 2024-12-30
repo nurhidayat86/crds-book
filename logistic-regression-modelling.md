@@ -63,11 +63,11 @@ L1 regularization adds a penalty equivalent to the absolute value of the magnitu
 
 $$Penalty_{L1} = \lambda \sum_{j=1}^{p} |\beta_j|$$
 
-,hence the (simplified) objective function becomes:
+hence the (simplified) objective function becomes:
 
 
 $$
-J(\beta) = -\left[ \sum_{i=1}^{n} \left( y_i \log(\hat{p}_i) + (1-y_i) \log(1-\hat{p}_i) \right) \right] + \lambda \sum_{j=1}^{p} |\beta_j|
+\beta^* = \arg \min_{\beta} (-\left[ \sum_{i=1}^{n} \left( y_i \log(\hat{p}_i) + (1-y_i) \log(1-\hat{p}_i) \right) \right] + \lambda \sum_{j=1}^{p} |\beta_j|)
 $$
 
 
