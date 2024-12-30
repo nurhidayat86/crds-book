@@ -14,7 +14,7 @@ $$f(x)=\beta_0 + \beta_1 X_1 + \beta_2 X_2 + \ldots + \beta_k X_k$$
 
 , $\beta_0,\beta_1,\beta_2,...,\beta_k$ are the model coefficients, and $e$ is the natural logiarithm base. The model coffecients are learnt during the model training, which is basically solving an optimization problem of the following function:
 
-$$\beta^* = \arg \max_{\beta} \left[ \sum_{i=1}^n \left( y_i \log \left(\frac{1}{1 + e^{-\beta^T x_i}}\right) + (1 - y_i) \log \left(1 - \frac{1}{1 + e^{-\beta^T x_i}}\right) \right) \right]
+$$\beta^* = \arg \min_{\beta} -\left[ \sum_{i=1}^n \left( y_i \log \left(\frac{1}{1 + e^{-\beta^T x_i}}\right) + (1 - y_i) \log \left(1 - \frac{1}{1 + e^{-\beta^T x_i}}\right) \right) \right]
 $$
 
 where $y_i$ is the observed binary outcome of the $i$-th observation (either 1 or 0), $x_i$ is the vector predictor variables  for the $i$-th observation, and $\beta$ is the model coefficients.
@@ -44,3 +44,31 @@ For the sign of the coefficient (positive or negative), it indicates the directi
 To compare the relative importance of variables that are on different scales, it is useful to look at standardized coefficients. Standardizing involves scaling the coefficients by their standard errors, which adjusts for the scale of the variables and allows for a more direct comparison across different features. This can be particularly important when dealing with variables that vary in units or range, such as comparing age in years to income in thousands of dollars.
 
 Standardization, scaling, or transformation can also be done at the predictor level before their inclusion in the model. This will ensure every predictor has the same range. A notable method for this purpose is the Weight of Evidence (WoE) transformation, which is extensively used in credit risk modeling. WoE transformation does not only standardize the predictors. It also handles outliers, convert categorical variables into numbers, and effectively solve issues on moderate target imbalance which is commonly found in PD model development.
+
+## Hyperparameter tuning and regularization in logistic regression
+As with many predictive models including logistic regression, achieving the optimal model performance often involves fine-tuning various settings or parameters. These settings, known as hyperparameters. Hyperparameters are not directly learned from the training data, but are set prior to the learning process and affect the training process and model behavior. One part of hyperparameter tuning is determining the regularization type and strength. 
+
+Regularization is one specific technique used in the context of predictive models to prevent overfitting and enhance model generalizability. In the case of logistic regression, there are three types regularizations: L1, L2, and elastic net.
+
+### L1 Regularization (Lasso)
+L1 regularization adds a penalty equivalent to the absolute value of the magnitude of coefficients to the objective function. This can lead to some coefficients being zeroed out, making it useful for feature selection in models with many features. The regularization term for L1 is given by:
+
+$$Penalty_{L1} = \lambda \sum_{j=1}^{p} |\beta_j|$$
+
+,hence the (simplified) objective function becomes
+
+$$J(\beta) = -\left[ \sum_{i=1}^{n} \left( y_i \log(\hat{p}_i) + (1-y_i) \log(1-\hat{p}_i) \right) \right] + \lambda \sum_{j=1}^{p} |\beta_j|$$
+
+where $\lambda$ is the L1 regularization strength, $\beta$ is the predictor, and $P$ is the number of predictors.
+
+### L2 egularization (Ridge)
+L2 regularization adds a penalty equivalent to the square of the magnitude of coefficients. This effectively shrinks the coefficients and helps to handle multicollinearity by keeping all variables in the model but penalizing their values if they are too large. The regularization term for L2 is
+
+$$Penalty_{L2} = \lambda \sum_{j=1}^{p} \beta^2_j$$
+
+### Elastic Net
+Elastic Net combines the penalties of L1 and L2 regularization. Elastic Net aims to enjoy the benefits of both Ridge and Lasso regularization. The regularization term is
+
+$$Penalty_{L1+L2} = r\lambda \sum_{j=1}^{p} |\beta_j| + (1-r)\lambda \sum_{j=1}^{p} \beta^2_j$$
+
+where $r$ is the regularization ratio between L1 and L2.
