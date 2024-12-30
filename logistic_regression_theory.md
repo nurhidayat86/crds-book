@@ -57,7 +57,9 @@ $$Penalty_{L1} = \lambda \sum_{j=1}^{p} |\beta_j|$$
 
 ,hence the (simplified) objective function becomes
 
-$$J(\beta) = -\left[ \sum_{i=1}^{n} \left( y_i \log(\hat{p}_i) + (1-y_i) \log(1-\hat{p}_i) \right) \right] + \lambda \sum_{j=1}^{p} |\beta_j|$$
+$$
+J(\beta) = -\left[ \sum_{i=1}^{n} \left( y_i \log(\hat{p}_i) + (1-y_i) \log(1-\hat{p}_i) \right) \right] + \lambda \sum_{j=1}^{p} |\beta_j|
+$$
 
 where $\lambda$ is the L1 regularization strength, $\beta$ is the predictor, and $P$ is the number of predictors.
 
