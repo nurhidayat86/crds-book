@@ -4,3 +4,5 @@ plugins:
 
 title: [Credit Risk Data Science - A Pocket Book]
 description: [Swiss knife of credit risk data scientist]
+
+mathjax: true

@@ -1,3 +1,9 @@
+---
+layout: default
+mathjax: true
+---
+
+
 # Developing Credit Risk Scorecard Using Logistic Regression
 Logistic regression is a statistical model that is commonly used for binary classification tasks. It's elegance lies in its simplicity and interpretability, making it suitable for credit risk models such as PD model. 
 
