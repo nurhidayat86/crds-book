@@ -1,5 +1,7 @@
-# Logistic Regression for Binary Classification
-Logistic regression is a statistical model that is commonly used for binary classification tasks. It's elegance lies in its simplicity and interpretability, making it suitable for credit risk models such as PD model. This sectione explains the mechanics behind logistic regression model including the understanding of its mathematical formula, strength and weaknesses, and why it is widely used for credit risk modelling.
+# Developing Credit Risk Scorecard Using Logistic Regression
+Logistic regression is a statistical model that is commonly used for binary classification tasks. It's elegance lies in its simplicity and interpretability, making it suitable for credit risk models such as PD model. 
+
+This section explains the basic mechanics behind logistic regression, use it to develop a predictive model, and convert it into a scorecard.
 
 ## Understanding the mathematical formulation
 The foundation of logistic regression lies in its ability to estimate probabilities using a logistic function, which is an S-shaped curve also known as the sigmoid function. The logistic function models the probability that the dependent variable belongs to a particular category.
