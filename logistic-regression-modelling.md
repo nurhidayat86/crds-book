@@ -34,6 +34,8 @@ However, logistic regression also has its limitations. The assumption of lineari
 
 Logistic regression also struggles with problems of multicollinearity among predictors, where high correlations between variables can destabilize the coefficient estimates, making them difficult to interpret. Another weakness is the impact of outliers and influential points, which can disproportionately affect the model due to the model's reliance on maximum likelihood estimation.
 
+Compared to more modern ensemble models such as gradient boosted trees, logistic regression lack of boosting capability. Boosting can boost the model performance by minimizing the errors on the part of data that has high degree of false prediction. This capability, combined with bigger size of data, can significantly improve the performance of the model. Additionally, this capability also allow the model to use more predictors without losing significant performance gain.
+
 ## Feature importance in logistic regression
 The most straightforward method to assess feature importance in logistic regression is by examining the magnitude and sign of the model coefficients. In logistic regression, each coefficient represents the change in the log odds of the outcome for a one-unit change in the corresponding feature, assuming other variables are held constant. 
 
@@ -45,10 +47,8 @@ To compare the relative importance of variables that are on different scales, it
 
 Standardization, scaling, or transformation can also be done at the predictor level before their inclusion in the model. This will ensure every predictor has the same range. A notable method for this purpose is the Weight of Evidence (WoE) transformation, which is extensively used in credit risk modeling. WoE transformation does not only standardize the predictors. It also handles outliers, convert categorical variables into numbers, and effectively solve issues on moderate target imbalance which is commonly found in PD model development.
 
-## Hyperparameter tuning and regularization in logistic regression
-As with many predictive models including logistic regression, achieving the optimal model performance often involves fine-tuning various settings or parameters. These settings, known as hyperparameters. Hyperparameters are not directly learned from the training data, but are set prior to the learning process and affect the training process and model behavior. One part of hyperparameter tuning is determining the regularization type and strength. 
-
-Regularization is one specific technique used in the context of predictive models to prevent overfitting and enhance model generalizability. In the case of logistic regression, there are three types regularizations: L1, L2, and elastic net.
+## Regularization in logistic regression
+Regularization is a technique used in the context of predictive models to prevent overfitting and enhance model generalizability. In the case of logistic regression, there are three types regularizations: L1, L2, and elastic net.
 
 ### L1 Regularization (Lasso)
 L1 regularization adds a penalty equivalent to the absolute value of the magnitude of coefficients to the objective function. This can lead to some coefficients being zeroed out, making it useful for feature selection in models with many features. The regularization term for L1 is given by:
@@ -61,12 +61,14 @@ $$
 J(\beta) = -\left[ \sum_{i=1}^{n} \left( y_i \log(\hat{p}_i) + (1-y_i) \log(1-\hat{p}_i) \right) \right] + \lambda \sum_{j=1}^{p} |\beta_j|
 $$
 
-where $\lambda$ is the L1 regularization strength, $\beta$ is the predictor, and $P$ is the number of predictors.
+where $\lambda$ is the L1 regularization strength, $\beta$ is the predictor, and $P$ is the number of predictors. As you can see from the penalized objective function, bigger the $\beta$ coefficients give bigger penalty to the function that should  be minimized by the solver.
 
 ### L2 egularization (Ridge)
 L2 regularization adds a penalty equivalent to the square of the magnitude of coefficients. This effectively shrinks the coefficients and helps to handle multicollinearity by keeping all variables in the model but penalizing their values if they are too large. The regularization term for L2 is
 
 $$Penalty_{L2} = \lambda \sum_{j=1}^{p} \beta^2_j$$
+
+. As you can see from the regularization term, there is a quadratic term that produce stronger effect, especially when value of $\beta$ is high. 
 
 ### Elastic Net
 Elastic Net combines the penalties of L1 and L2 regularization. Elastic Net aims to enjoy the benefits of both Ridge and Lasso regularization. The regularization term is
@@ -74,3 +76,30 @@ Elastic Net combines the penalties of L1 and L2 regularization. Elastic Net aims
 $$Penalty_{L1+L2} = r\lambda \sum_{j=1}^{p} |\beta_j| + (1-r)\lambda \sum_{j=1}^{p} \beta^2_j$$
 
 where $r$ is the regularization ratio between L1 and L2.
+
+## Comparison of logistic regression with ensemble models
+Logistic regression, while robust and widely utilized, does not incorporate boosting, a technique often employed in more modern ensemble models like gradient boosted trees. Boosting is a powerful method that enhances model performance by iteratively focusing on the portions of the data where prediction errors are high. This targeted improvement helps in refining the model's accuracy over successive iterations.
+
+Ensemble models that use boosting are particularly adept at handling large datasets and can effectively incorporate a greater number of predictors without a corresponding loss in performance. This capability allows these models to adapt more flexibly to complex datasets and capture subtle patterns that may be missed by simpler models like logistic regression.
+
+In contrast, logistic regression's performance is generally constrained by its linear nature and the absence of mechanisms to iteratively refine predictions based on previous errors. As a result, while logistic regression is valuable for its interpretability and efficiency, it may not achieve the same level of accuracy as boosted ensemble models when dealing with complex or large-scale data environments. This distinction is crucial for practitioners to consider when selecting the appropriate modeling approach for their specific data and analytical needs. 
+
+Developing predictive models using logistic regression usually involves more manual steps compared to developing predictivemodels using ensemble models like gradient boosted trees. Some common manual steps include introducing feature interraction, transforming predictors to align with the log-odd linearity wth the outcome, limitting the predictor variables by selecting only the best performing ones, etc.
+
+## Introducing feature interraction
+placeholder
+
+## Weight of Evidence (WoE) transformation
+Placeholder
+
+## Feature selection
+Placeholder
+
+## Hyperparameter tuning
+Placeholder
+
+## Converting logistic regression model into a scorecard
+Placeholder
+
+## Monitoring the model
+Placeholder
