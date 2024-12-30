@@ -66,9 +66,7 @@ $$Penalty_{L1} = \lambda \sum_{j=1}^{p} |\beta_j|$$
 hence the (simplified) objective function becomes:
 
 
-$$
-\beta^* = \arg \min_{\beta} (-\left[ \sum_{i=1}^{n} \left( y_i \log(\hat{p}_i) + (1-y_i) \log(1-\hat{p}_i) \right) \right] + \lambda \sum_{j=1}^{p} |\beta_j|)
-$$
+$$\beta^* = \arg \min_{\beta} (-\left[ \sum_{i=1}^{n} \left( y_i \log(\hat{p}_i) + (1-y_i) \log(1-\hat{p}_i) \right) \right] + \lambda \sum_{j=1}^{p} |\beta_j|)$$
 
 
 where $\lambda$ is the L1 regularization strength, $\beta$ is the predictor, and $P$ is the number of predictors. As you can see from the penalized objective function, bigger the $\beta$ coefficients give bigger penalty to the function that should  be minimized by the solver.
