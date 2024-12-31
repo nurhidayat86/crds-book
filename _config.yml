@@ -23,7 +23,7 @@ email: nurhidayat86@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Another kind of simplified manual for credit risk data scientist.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: https://nurhidayat86.github.io/crds-pocket-book.github.io/ # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: nurhidayat_arif
 github_username:  nurhidayat86
 
