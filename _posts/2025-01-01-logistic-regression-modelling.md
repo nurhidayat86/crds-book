@@ -33,17 +33,6 @@ The second assumption of the logistic regression model is that the predictors ar
 
 There are also other reasonable assumption in logistic regression model such as there should be no combination of predictor variables that can perfectly predicts the binary output (quasi-complete separation), and the observation $i,i+1,i+2,...,n$, should be independent eachother. Quasi-complete separation can to problems in the estimation process, typically resulting in extremely large coefficient estimates or failure to converge.
 
-## Strength and weaknesses of logistic regression model
-One of the logistic regression's primary strengths is its interpretability; the output of a logistic regression model is a probability that gives clear insight into the relationship between the independent variables and the outcome. This interpretability extends to its coefficients, which represent the change in the log odds of the dependent variable per unit change in the predictor. This aspect makes logistic regression valuable in fields like finance, medicine, and social sciences, where understanding the influence of variables is crucial.
-
-Another advantage of logistic regression is its simplicity and efficiency in terms of computation, particularly when compared to more complex models like neural networks or ensemble methods (including random forest and gradient boosted trees). It doesn't require high computational resources, making it suitable for situations with constrained computational capacity.
-
-However, logistic regression also has its limitations. The assumption of linearity between the logit of the outcome and each predictor can be a drawback, as it restricts the model's ability to capture more complex relationships in the data. Additionally, as logistic regression assumes between-predictors independency, the model struggles to capture interraction between predictors.
-
-Logistic regression also struggles with problems of multicollinearity among predictors, where high correlations between variables can destabilize the coefficient estimates, making them difficult to interpret. Another weakness is the impact of outliers and influential points, which can disproportionately affect the model due to the model's reliance on maximum likelihood estimation.
-
-Compared to more modern ensemble models such as gradient boosted trees, logistic regression lack of boosting capability. Boosting can boost the model performance by minimizing the errors on the part of data that has high degree of false prediction. This capability, combined with bigger size of data, can significantly improve the performance of the model. Additionally, this capability also allow the model to use more predictors without losing significant performance gain.
-
 ## Feature importance in logistic regression
 The most straightforward method to assess feature importance in logistic regression is by examining the magnitude and sign of the model coefficients. In logistic regression, each coefficient represents the change in the log odds of the outcome for a one-unit change in the corresponding feature, assuming other variables are held constant. 
 
@@ -85,16 +74,24 @@ $$Penalty_{L1+L2} = r\lambda \sum_{j=1}^{p} |\beta_j| + (1-r)\lambda \sum_{j=1}^
 
 where $r$ is the regularization ratio between L1 and L2.
 
-## Comparison of logistic regression with ensemble models
+## Strength and weaknesses of logistic regression model
+One of the logistic regression's primary strengths is its interpretability; the output of a logistic regression model is a probability that gives clear insight into the relationship between the independent variables and the outcome. This interpretability extends to its coefficients, which represent the change in the log odds of the dependent variable per unit change in the predictor. This aspect makes logistic regression valuable in fields like finance, medicine, and social sciences, where understanding the influence of variables is crucial.
+
+Another advantage of logistic regression is its simplicity and efficiency in terms of computation, particularly when compared to more complex models like neural networks or ensemble methods (including random forest and gradient boosted trees). It doesn't require high computational resources, making it suitable for situations with constrained computational capacity. The independency between features also helps the data scientists when they need to exclude a particular feature due to unwanted behavior.
+
+However, logistic regression also has its limitations. The assumption of linearity between the logit of the outcome and each predictor can be a drawback, as it restricts the model's ability to capture more complex relationships in the data. Additionally, as logistic regression assumes between-predictors independency, the model struggles to capture interraction between predictors.
+
+Logistic regression also struggles with problems of multicollinearity among predictors, where high correlations between variables can destabilize the coefficient estimates, making them difficult to interpret. Another weakness is the impact of outliers and influential points, which can disproportionately affect the model due to the model's reliance on maximum likelihood estimation.
+
 Logistic regression, while robust and widely utilized, does not incorporate boosting, a technique often employed in more modern ensemble models like gradient boosted trees. Boosting is a powerful method that enhances model performance by iteratively focusing on the portions of the data where prediction errors are high. This targeted improvement helps in refining the model's accuracy over successive iterations.
 
 Ensemble models that use boosting are particularly adept at handling large datasets and can effectively incorporate a greater number of predictors without a corresponding loss in performance. This capability allows these models to adapt more flexibly to complex datasets and capture subtle patterns that may be missed by simpler models like logistic regression.
 
 In contrast, logistic regression's performance is generally constrained by its linear nature and the absence of mechanisms to iteratively refine predictions based on previous errors. As a result, while logistic regression is valuable for its interpretability and efficiency, it may not achieve the same level of accuracy as boosted ensemble models when dealing with complex or large-scale data environments. This distinction is crucial for practitioners to consider when selecting the appropriate modeling approach for their specific data and analytical needs. 
 
-Developing predictive models using logistic regression usually involves more manual steps compared to developing predictivemodels using ensemble models like gradient boosted trees. Some common manual steps include introducing feature interraction, transforming predictors to align with the log-odd linearity wth the outcome, limitting the predictor variables by selecting only the best performing ones, etc.
+At last, developing predictive models using logistic regression usually involves more manual steps compared to developing predictivemodels using ensemble models like gradient boosted trees. Some common manual steps include introducing feature interraction, transforming predictors to align with the log-odd linearity wth the outcome, limitting the predictor variables by selecting only the best performing ones, etc. The subsequent sections explain how we can deal with the logistic regression's limitation trough manual feature interraction, WoE transformation, and feature selection.
 
-## Introducing feature interraction
+## Manual feature interraction
 placeholder
 
 ## Weight of Evidence (WoE) transformation
