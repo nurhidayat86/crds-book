@@ -7,9 +7,7 @@ title: Understanding Logistic Regression
 ---
 
 # Developing Credit Risk Scorecard Using Logistic Regression
-Logistic regression is a statistical model that is commonly used for binary classification tasks. It's elegance lies in its simplicity and interpretability, making it suitable for credit risk models such as PD model. 
-
-This section explains the basic mechanics behind logistic regression, use it to develop a predictive model, and convert it into a scorecard.
+Logistic regression is a statistical model that is commonly used for binary classification tasks. It's elegance lies in its simplicity and interpretability, making it suitable for credit risk models such as PD model. This section explains the basic mechanics behind logistic regression.
 
 ## Understanding the mathematical formulation
 The foundation of logistic regression lies in its ability to estimate probabilities using a logistic function, which is an S-shaped curve also known as the sigmoid function. The logistic function models the probability that the dependent variable belongs to a particular category.
@@ -29,11 +27,11 @@ $$
 
 where $$y_i$$ is the observed binary outcome of the $$i$$-th observation (either 1 or 0), $$x_i$$ is the vector predictor variables  for the $$i$$-th observation, and $$\beta$$ is the model coefficients.
 
-Let's leave the optimization problem and focus on the logistic regression formula. You can see from the relationship between $$P(Y=1\|X)$$ and $$f(x)$$ that extremly high value of $$f(X)$$ will make the $$P(Y=1\|X)$$ close to 1, and extremly low value of $$f(X)$$ will make the $$P(Y=1\|X)$$ close to 0. In fact, $$X$$ is linear to to the log-odd probability of $$Y$$. Or we can also at least the relationship between $$X$$ and $$P(Y=1\|X)$$ is monotonic. This is the first assumption of logistic regression model. Unfortunately, in reality, this is often not the case. Therefore, we need to transform the input variables before we can feed them into the logisti regression model for more optimum result.
+Let's leave the optimization problem and focus on the logistic regression formula. You can see from the relationship between $$P(Y=1\|X)$$ and $$f(x)$$ that extremly high value of $$f(X)$$ will make the $$P(Y=1\|X)$$ close to 1, and extremly low value of $$f(X)$$ will make the $$P(Y=1\|X)$$ close to 0. In fact, $$X$$ is linear to to the log-odd probability of $$Y$$. Or we can also at least say that the relationship between $$X$$ and $$P(Y=1\|X)$$ is monotonic. This is the first assumption of logistic regression model. Unfortunately, in reality, this is often not the case. Therefore, we need to transform the input variables before we can feed them into the logistic regression model for more optimum result.
 
 The second assumption of the logistic regression model is that the predictors are independent. i.e, the values between predictors, $$x_0,x_1,...,x_n$$, should not be correlated. You can see from $$f(X)$$ that each predictor $$x_i$$ has its own beta coefficient $$\beta_i$$, and the result of $$f(X)$$ is basically the summation of $$\beta_ix_i$$. High correlation between predictor variables can lead to difficulties in estimating the model coefficients because it becomes hard to disentangle the effect of each variable.
 
-There are also other reasonable assumption in logistic regression model such as there should be no combination of predictor variables that can perfectly predicts the binary output (quasi-complete separation), and the observation $$i,i+1,i+2,...,n$$, should be independent eachother. Quasi-complete separation can to problems in the estimation process, typically resulting in extremely large coefficient estimates or failure to converge.
+There are also other reasonable assumption in logistic regression model such as there should be no combination of predictor variables that can perfectly predicts the binary output (quasi-complete separation), and the observation $$i,i+1,i+2,...,n$$, should be independent eachother. Quasi-complete separation can lead to problems in the estimation process, typically resulting in extremely large coefficient estimates or failure to converge.
 
 ## Feature importance in logistic regression
 The most straightforward method to assess feature importance in logistic regression is by examining the magnitude and sign of the model coefficients. In logistic regression, each coefficient represents the change in the log odds of the outcome for a one-unit change in the corresponding feature, assuming other variables are held constant. 
