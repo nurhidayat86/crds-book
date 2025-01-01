@@ -14,7 +14,7 @@ This section explains the basic mechanics behind logistic regression, use it to 
 ## Understanding the mathematical formulation
 The foundation of logistic regression lies in its ability to estimate probabilities using a logistic function, which is an S-shaped curve also known as the sigmoid function. The logistic function models the probability that the dependent variable belongs to a particular category.
 
-For a binary classificationt ask, let $Y$ represents a binary target where $Y$ is either $1$ $(True)$ or $0$ $(False)$, and $X$ represents the features or predictor variables, a logistic regression model predicts the probability $P(Y=1\|X)$ as:
+For a binary classificationt ask, let $$Y$$ represents a binary target where $$Y$$ is either $$1$$ $$(True)$$ or $$0$$ $$(False)$$, and $$X$$ represents the features or predictor variables, a logistic regression model predicts the probability $$P(Y=1\|X)$$ as:
 
 $$P(Y = 1 | X) = \frac{1}{1 + e^{-(f(x))}}$$
 
@@ -22,18 +22,18 @@ where
 
 $$f(x)=\beta_0 + \beta_1 X_1 + \beta_2 X_2 + \ldots + \beta_k X_k$$
 
-, $\beta_0,\beta_1,\beta_2,...,\beta_k$ are the model coefficients, and $e$ is the natural logiarithm base. The model coffecients are learnt during the model training, which is basically solving an optimization problem of the following function:
+, $$\beta_0,\beta_1,\beta_2,...,\beta_k$$ are the model coefficients, and $$e$$ is the natural logiarithm base. The model coffecients are learnt during the model training, which is basically solving an optimization problem of the following function:
 
 $$\beta^* = \arg \min_{\beta} -\left[ \sum_{i=1}^n \left( y_i \log \left(\frac{1}{1 + e^{-\beta^T x_i}}\right) + (1 - y_i) \log \left(1 - \frac{1}{1 + e^{-\beta^T x_i}}\right) \right) \right]
 $$
 
-where $y_i$ is the observed binary outcome of the $i$-th observation (either 1 or 0), $x_i$ is the vector predictor variables  for the $i$-th observation, and $\beta$ is the model coefficients.
+where $$y_i$$ is the observed binary outcome of the $$i$$-th observation (either 1 or 0), $$x_i$$ is the vector predictor variables  for the $$i$$-th observation, and $$\beta$$ is the model coefficients.
 
-Let's leave the optimization problem and focus on the logistic regression formula. You can see from the relationship between $P(Y=1\|X)$ and $f(x)$ that extremly high value of $f(X)$ will make the $P(Y=1\|X)$ close to 1, and extremly low value of $f(X)$ will make the $P(Y=1\|X)$ close to 0. In fact, $X$ is linear to to the log-odd probability of $Y$. Or we can also at least the relationship between $X$ and $P(Y=1\|X)$ is monotonic. This is the first assumption of logistic regression model. Unfortunately, in reality, this is often not the case. Therefore, we need to transform the input variables before we can feed them into the logisti regression model for more optimum result.
+Let's leave the optimization problem and focus on the logistic regression formula. You can see from the relationship between $$P(Y=1\|X)$$ and $$f(x)$$ that extremly high value of $$f(X)$$ will make the $$P(Y=1\|X)$$ close to 1, and extremly low value of $$f(X)$$ will make the $$P(Y=1\|X)$$ close to 0. In fact, $$X$$ is linear to to the log-odd probability of $$Y$$. Or we can also at least the relationship between $$X$$ and $$P(Y=1\|X)$$ is monotonic. This is the first assumption of logistic regression model. Unfortunately, in reality, this is often not the case. Therefore, we need to transform the input variables before we can feed them into the logisti regression model for more optimum result.
 
-The second assumption of the logistic regression model is that the predictors are independent. i.e, the values between predictors, $x_0,x_1,...,x_n$, should not be correlated. You can see from $f(X)$ that each predictor $x_i$ has its own beta coefficient $\beta_i$, and the result of $f(X)$ is basically the summation of $\beta_ix_i$. High correlation between predictor variables can lead to difficulties in estimating the model coefficients because it becomes hard to disentangle the effect of each variable.
+The second assumption of the logistic regression model is that the predictors are independent. i.e, the values between predictors, $$x_0,x_1,...,x_n$$, should not be correlated. You can see from $$f(X)$$ that each predictor $$x_i$$ has its own beta coefficient $$\beta_i$$, and the result of $$f(X)$$ is basically the summation of $$\beta_ix_i$$. High correlation between predictor variables can lead to difficulties in estimating the model coefficients because it becomes hard to disentangle the effect of each variable.
 
-There are also other reasonable assumption in logistic regression model such as there should be no combination of predictor variables that can perfectly predicts the binary output (quasi-complete separation), and the observation $i,i+1,i+2,...,n$, should be independent eachother. Quasi-complete separation can to problems in the estimation process, typically resulting in extremely large coefficient estimates or failure to converge.
+There are also other reasonable assumption in logistic regression model such as there should be no combination of predictor variables that can perfectly predicts the binary output (quasi-complete separation), and the observation $$i,i+1,i+2,...,n$$, should be independent eachother. Quasi-complete separation can to problems in the estimation process, typically resulting in extremely large coefficient estimates or failure to converge.
 
 ## Feature importance in logistic regression
 The most straightforward method to assess feature importance in logistic regression is by examining the magnitude and sign of the model coefficients. In logistic regression, each coefficient represents the change in the log odds of the outcome for a one-unit change in the corresponding feature, assuming other variables are held constant. 
@@ -60,21 +60,21 @@ hence the (simplified) objective function becomes:
 $$\beta^* = \arg \min_{\beta} (-\left[ \sum_{i=1}^{n} \left( y_i \log(\hat{p}_i) + (1-y_i) \log(1-\hat{p}_i) \right) \right] + \lambda \sum_{j=1}^{p} |\beta_j|)$$
 
 
-where $\lambda$ is the L1 regularization strength, $\beta$ is the predictor, and $P$ is the number of predictors. As you can see from the penalized objective function, bigger the $\beta$ coefficients give bigger penalty to the function that should  be minimized by the solver.
+where $$\lambda$$ is the L1 regularization strength, $$\beta$$ is the predictor, and $$P$$ is the number of predictors. As you can see from the penalized objective function, bigger the $$\beta$$ coefficients give bigger penalty to the function that should  be minimized by the solver.
 
 ### L2 egularization (Ridge)
 L2 regularization adds a penalty equivalent to the square of the magnitude of coefficients. This effectively shrinks the coefficients and helps to handle multicollinearity by keeping all variables in the model but penalizing their values if they are too large. The regularization term for L2 is
 
 $$Penalty_{L2} = \lambda \sum_{j=1}^{p} \beta^2_j$$
 
-. As you can see from the regularization term, there is a quadratic term that produce stronger effect, especially when value of $\beta$ is high. 
+. As you can see from the regularization term, there is a quadratic term that produce stronger effect, especially when value of $$\beta$$ is high. 
 
 ### Elastic Net
 Elastic Net combines the penalties of L1 and L2 regularization. Elastic Net aims to enjoy the benefits of both Ridge and Lasso regularization. The regularization term is
 
 $$Penalty_{L1+L2} = r\lambda \sum_{j=1}^{p} |\beta_j| + (1-r)\lambda \sum_{j=1}^{p} \beta^2_j$$
 
-where $r$ is the regularization ratio between L1 and L2.
+where $$r$$ is the regularization ratio between L1 and L2.
 
 ## Strength and weaknesses of logistic regression model
 One of the logistic regression's primary strengths is its interpretability; the output of a logistic regression model is a probability that gives clear insight into the relationship between the independent variables and the outcome. This interpretability extends to its coefficients, which represent the change in the log odds of the dependent variable per unit change in the predictor. This aspect makes logistic regression valuable in fields like finance, medicine, and social sciences, where understanding the influence of variables is crucial.
@@ -96,7 +96,7 @@ At last, developing predictive models using logistic regression usually involves
 ## Manual feature interraction
 Manual feature interaction involves creating new features based on combinations of existing features in the data, aiming to uncover relationships that might enhance the predictive power of our predictive models. This can be particularly useful when the interaction between variables might influence the outcome in ways not captured by the individual features alone. For example, in the case of predicting payment default, income data can be combined with the existing loan amount, forming loan to income ratio (LTI). Including LTI to the model is usually make logistic regression performs better compared to including both income and existing loan amount alone to the model. 
 
-There are several ways to introduce new features based on interraction, the method employed varies according to the type of data involved. For numerical data, new variables can be created by applying basic mathematical operations such as multiplication, division (to calculate ratios), addition, and subtraction among variables. Additionally, some practitioners employ more complex functions, such as the quadratic expansion $(a^2 + b^2 + 2ab)$, to generate new features, where $a$ and $b$ represent existing numerical variables. It is crucial, however, to select mathematical operations that are coherent with the underlying business logic. This ensures that the newly introduced features are not only statistically significant but also meaningful within the specific business context.
+There are several ways to introduce new features based on interraction, the method employed varies according to the type of data involved. For numerical data, new variables can be created by applying basic mathematical operations such as multiplication, division (to calculate ratios), addition, and subtraction among variables. Additionally, some practitioners employ more complex functions, such as the quadratic expansion $$(a^2 + b^2 + 2ab)$$, to generate new features, where $$a$$ and $$b$$ represent existing numerical variables. It is crucial, however, to select mathematical operations that are coherent with the underlying business logic. This ensures that the newly introduced features are not only statistically significant but also meaningful within the specific business context.
 
 ## Weight of Evidence (WoE) transformation
 Placeholder
