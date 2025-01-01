@@ -5,6 +5,7 @@
 layout: home
 title: Introduction
 ---
+# Introduction
 
 Welcome to the Credit Risk Data Science - A Pocket Book, your handy guide to the credit risk modelling. As the financial service industry evolves rapidly, employing data-driven approaches to assess credit risk has become more critical. This book aims to help you understand the data science techniques used in credit risk today, especially for developing ABC scores, ECL models, and also stress testing.
 
