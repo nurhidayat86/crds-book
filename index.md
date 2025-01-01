@@ -19,5 +19,5 @@ Please note that this book is a work in progress and, as such, will be regularly
 
 [Understanding Logistic Regression](./logistic-regression-modelling.md)
 
-[Next: Developing Predictive Model Using Logistic Regression](./modelling-lr.md)
+[Developing Predictive Model Using Logistic Regression](./modelling-lr.md)
 
