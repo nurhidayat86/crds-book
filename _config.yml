@@ -18,22 +18,22 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Credit Risk Data Science - A Pocket Book
-email: nurhidayat86@gmail.com
+title: Your awesome title
+email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Another kind of simplified manual for credit risk data scientist.
-# baseurl: "" # the subpath of your site, e.g. /blog
-url: https://nurhidayat86.github.io/crds-pocket-book.github.io/ # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: nurhidayat_arif
-github_username:  nurhidayat86
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: jekyllrb
+github_username:  jekyll
 
 # Build settings
-# theme: minima
-theme: just-the-docs/just-the-docs
+math: mathjax
+theme: just-the-docs
 plugins:
   - jekyll-feed
-
-# remote_theme: just-the-docs/just-the-docs
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -54,9 +54,3 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-
-defaults:
-  - scope:
-      path: "_posts"
-    values:
-      layout: "posts"
