@@ -29,7 +29,8 @@ github_username:  nurhidayat86
 
 # Build settings
 math: mathjax
-theme: just-the-docs
+theme: minima
+remote_theme: just-the-docs/just-the-docs
 plugins:
   - jekyll-feed
 
