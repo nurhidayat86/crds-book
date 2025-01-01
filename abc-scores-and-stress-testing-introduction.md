@@ -1,7 +1,8 @@
 ---
-layout: posts
-date:   2025-01-01 10:05:58 +0800
-categories: credit risk
+layout: home
+# date:   2025-01-01 10:05:58 +0800
+title: Introduction to ABC Scores and Stress Testing
+# categories: credit risk
 ---
 
 
