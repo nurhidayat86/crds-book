@@ -1,5 +1,6 @@
 ---
 layout: mathjax
+math: mathjax
 # date:   2025-01-01 10:05:58 +0800
 title: Developing Credit Risk Scorecard Using Logistic Regression
 # categories: credit risk
