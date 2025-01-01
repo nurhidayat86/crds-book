@@ -14,12 +14,5 @@ MathJax = {
           }
         }, '']
       }
-    },
-    tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],  // Configures inline delimiters
-        displayMath: [['$$', '$$'], ['\\[', '\\]']]  // Configures display delimiters
-    },
-    svg: {
-    fontCache: 'global'
     }
   };
