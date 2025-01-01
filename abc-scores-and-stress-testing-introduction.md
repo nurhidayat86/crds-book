@@ -34,3 +34,5 @@ EAD model estimates the amount that a financial institution is exposed to when a
 In credit risk management, stress testing is a method to evaluate how financial instituion's operations and portfolios respond to severe but plausible adverse economic scenarios. These tests are designed to simulate the impact of various extreme conditions, such as economic downturns, market crashes, or other disruptive events. The financial institutions use stress testing to understand potential vulnerabilities and prepare for unexpected losses. 
 
 Regulators in many countries require  financial institutions to perform regular stress tests to ensure that they can withstand economic shocks. Additionally, from the perspective of financial institutions, stress testing helps the management to make informed decisions regarding capital planning, risk appetite, and growth strategies.
+
+[Previous: Introduction](./index.md) | [Next: Understanding Logistic Regression](./logistic-regression-modelling.md)

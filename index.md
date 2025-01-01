@@ -13,3 +13,11 @@ Welcome to the Credit Risk Data Science - A Pocket Book, your handy guide to the
 Here is the structure of this book: We begin by introducing the concepts of ABC scores, ECL calculations, and stress testing. Next, we go through the practical aspects such as: how models are developed, evaluated, and monitored. Additionally, I will address common challenges faced by data scientists in the credit risk field and how to overcome them.
 
 Please note that this book is a work in progress and, as such, will be regularly updated. I will always try to make the explanations as simple as possible, though a complete avoidance of statistical or mathematical terms is sometimes impossible.
+
+## Index
+[Introduction to ABC Scores and Stress Testing](./abc-scores-and-stress-testing-introduction.md)
+
+[Understanding Logistic Regression](./logistic-regression-modelling.md)
+
+[Next: Developing Predictive Model Using Logistic Regression](./modelling-lr.md)
+
