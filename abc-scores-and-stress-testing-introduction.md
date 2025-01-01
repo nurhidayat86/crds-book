@@ -6,6 +6,7 @@ title: Introduction to ABC Scores and Stress Testing
 # categories: credit risk
 ---
 
+# Introduction to ABC Scores and Stress Testing
 
 ## ABC Scores
 In credit risk terms, ABC scores refer to models that assess the creditworthiness of potential or existing borrowers at three different point of time. Application score (A) is the initial score used to decide whether the loan application of potential borrowers will be approved or rejected based on their data that is available at the time of application such as applicant's credit history, income, employment status, and other relevant financial information. The data usually originates from credit bureau, government organization, and even other third party data vendors. 
