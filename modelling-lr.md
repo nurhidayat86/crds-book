@@ -4,6 +4,7 @@ math: mathjax
 # date:   2025-01-01 10:05:58 +0800
 title: Developing Predictive Model Using Logistic Regression
 # categories: credit risk
+nav_order: 4
 ---
 
 # Developing Predictive Model Using Logistic Regression
