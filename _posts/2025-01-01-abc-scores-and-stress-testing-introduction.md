@@ -1,6 +1,7 @@
 ---
-layout: default
-mathjax: true
+layout: posts
+date:   2025-01-01 10:05:58 +0800
+categories: credit risk
 ---
 
 
