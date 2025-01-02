@@ -13,7 +13,7 @@ Developing a predictive model with logistic regression involves numerous manual 
 The steps to develop a model using logistic regression are outlined as follows:
 
 1. Target label creation and feature engineering: This initial step involves defining what we predict and preparing the relevant features.
-2. Manual feature interaction: Introduce new features from the interraction between two or more existing features to improve the model performance.
+2. Manual fetaure interraction: Introduce new features from the interraction between two or more existing features to improve the model performance.
 2. Feature transformation using Weight of Evidence (WoE): This technique transforms categorical features into numerical scores, standardizes them, and make them monotonic to the target labels.
 3. Feature selection: Identify the most impactful features to include in the model.
 4. Hyperparameter tuning: Adjust the model parameters to optimize performance.
@@ -22,8 +22,15 @@ The steps to develop a model using logistic regression are outlined as follows:
 
 Each of these steps is crucial for effectively leveraging logistic regression in predictive modeling, ensuring that the final model is both accurate and practical.
 
-## Target label creation and feature engineering
-Placeholder
+## Target label creation
+Creating target labels for binary prediction may appear straightforward, but the process can be not trivial in reality. For example, in probability of default (PD) modeling, target labels are typically determined after borrowers have been on the books for a while. Many financial institutions employ a two-year performance window, meaning that ground truth labels are only confirmed 24 months after the initial snapshot of the features. This approach, while common, might not be suitable for everyone. A significant gap between the time when feature data is captured and when target labels are determined can lead to outdated or irrelevant feature data, undermining the accuracy of the model.
+
+One method to determine the performnce window is to use vintage analysis. Vintage analysis is an analytical technique used in credit risk modeling to assess the performance of loans across different time periods, known as vintages. A vintage in this context refers to a group of loans issued within a specific time frame, often within a particular month. The primary goal of vintage analysis is to evaluate how loans from each vintage perform over their lifetime, allowing financial institutions to determine the optimal performance window for assessing default risks.
+
+The analysis focuses on the 'loss curve' which plots the cumulative percentage of defaults or losses against the age of the loan. By examining these curves, analysts can determine how long it typically takes for the performance of a vintage to stabilize. This stabilization point is critical as it indicates when the data becomes predictive and representative of the ultimate performance of the loans.
+
+## Feature engineering
+Placeholer
 
 ## Manual feature interraction
 Manual feature interaction involves creating new features based on combinations of existing features in the data, aiming to uncover relationships that might enhance the predictive power of our predictive models. This can be particularly useful when the interaction between variables might influence the outcome in ways not captured by the individual features alone. For example, in the case of predicting payment default, income data can be combined with the existing loan amount, forming loan to income ratio (LTI). Including LTI to the model is usually make logistic regression performs better compared to including both income and existing loan amount alone to the model. 
