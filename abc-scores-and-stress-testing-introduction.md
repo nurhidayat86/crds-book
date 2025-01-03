@@ -2,12 +2,12 @@
 layout: mathjax
 math: mathjax
 # date:   2025-01-01 10:05:58 +0800
-title: Introduction to ABC Scores and Stress Testing
+title: Introduction to ABC Scores and ECL Calculation
 # categories: credit risk
 nav_order: 2
 ---
 
-# Introduction to ABC Scores and Stress Testing
+# Introduction to ABC Scores and ECL Calculation
 
 ## ABC Scores
 In credit risk terms, ABC scores refer to models that assess the creditworthiness of potential or existing borrowers at three different point of time. Application score (A) is the initial score used to decide whether the loan application of potential borrowers will be approved or rejected based on their data that is available at the time of application such as applicant's credit history, income, employment status, and other relevant financial information. The data usually originates from credit bureau, government organization, and even other third party data vendors. 
@@ -31,9 +31,5 @@ LGD model estimates the economic loss if the default occurs, considering the rec
 
 EAD model estimates the amount that a financial institution is exposed to when a default occurs. It includes not only the outstanding balance at the time of default but also any additional amounts that may be drawn down before the default occurs, such as undrawn credit lines or committed but undrawn loans.
 
-## Stress testing
-In credit risk management, stress testing is a method to evaluate how financial instituion's operations and portfolios respond to severe but plausible adverse economic scenarios. These tests are designed to simulate the impact of various extreme conditions, such as economic downturns, market crashes, or other disruptive events. The financial institutions use stress testing to understand potential vulnerabilities and prepare for unexpected losses. 
-
-Regulators in many countries require  financial institutions to perform regular stress tests to ensure that they can withstand economic shocks. Additionally, from the perspective of financial institutions, stress testing helps the management to make informed decisions regarding capital planning, risk appetite, and growth strategies.
 
 [Previous: Introduction](./index.md) | [Next: Understanding Logistic Regression](./logistic-regression-modelling.md)
