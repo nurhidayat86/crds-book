@@ -4,7 +4,7 @@ math: mathjax
 # date:   2025-01-01 10:05:58 +0800
 title: Weight of Evidence (WoE) Transformation
 # categories: credit risk
-nav_order: 7
+nav_order: 8
 ---
 
 # Weight of Evidence (WoE) transformation
@@ -50,4 +50,4 @@ Placeholder
 ## Converting logistic regression model into a scorecard
 Placeholder
 
-[Previous: Manual Feature Interraction](./feature-interraction.md) | [Next: Feature Selection](./feature-selection.md)
+[Previous: Data Splitting](./data-splitting.md) | [Next: Feature Selection](./feature-selection.md)

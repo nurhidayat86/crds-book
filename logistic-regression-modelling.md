@@ -95,14 +95,15 @@ Developing an A-score with logistic regression model involves numerous manual st
 
 The steps to develop an A-score using logistic regression model are outlined as follows:
 
-1. Target label creation
-2. Feature engineering
-3. Manual fetaure interraction.
-3. Feature transformation using Weight of Evidence (WoE).
-4. Identify the most impactful features to include in the model (feature selection).
-5. Adjust the model parameters to optimize performance (Hyperparameter tuning).
-6. Evaluation.
-7. Scorecard Creation.
+1. Target label creation.
+2. Feature engineering.
+3. Manual feature interraction.
+4. Data Splitting
+5. Feature transformation using Weight of Evidence (WoE).
+6. Identify the most impactful features to include in the model (feature selection).
+7. Adjust the model parameters to optimize performance (Hyperparameter tuning).
+8. Evaluation.
+9. Scorecard Creation.
 
 Each of these steps is crucial for effectively leveraging logistic regression in predictive modeling, ensuring that the final model is both accurate and practical.
 

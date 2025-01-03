@@ -4,7 +4,7 @@ math: mathjax
 # date:   2025-01-01 10:05:58 +0800
 title: Feature Selection
 # categories: credit risk
-nav_order: 8
+nav_order: 9
 ---
 
 # Feature selection
@@ -14,7 +14,7 @@ There are various approaches to selecting meaningful features in data analysis, 
 
 Multivariate feature selection methods assess the performance gain of a feature when it is considered in combination with other features within a model.Examples of such methods include Recurring Feature Addition (RFA) and Recurring Feature Elimination (RFE). Notably, RFA is akin to what is known in logistic regression models as stepwise logistic regression, indicating that both methods share similar methodologies. This section explores three most commonly used feature selection techniques in logistic regression model: Information Value (IV), Area Under the Receiver Operating Characteristic (AUROC), and stepwise logistic regression. 
 
-## Invormation values (IV)
+## Information values (IV)
 Placeholder
 
 ## Area Under the Receiver Operating Characteristic (AUROC)
