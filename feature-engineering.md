@@ -7,28 +7,41 @@ title: Developing Predictive Model Using Logistic Regression
 nav_order: 4
 ---
 
-# Developing Predictive Model Using Logistic Regression
-Developing a predictive model with logistic regression involves numerous manual steps, as logistic regression does not inherently handle categorical features, lacks feature interaction, and can accommodate fewer features compared to more advanced models like gradient boosted trees. This section explains the process of building a predictive model using logistic regression, and subsequently converting it into a scorecard.
+# Developing ABC Score Using Logistic Regression
+Developing a credit risk model with logistic regression involves numerous manual steps, as logistic regression does not inherently handle categorical features, lacks feature interaction, and can accommodate fewer features compared to more advanced models like gradient boosted trees. This section explains the process of building a predictive model using logistic regression, and subsequently converting it into a scorecard.
 
 The steps to develop a model using logistic regression are outlined as follows:
 
-1. Target label creation and feature engineering: This initial step involves defining what we predict and preparing the relevant features.
-2. Manual fetaure interraction: Introduce new features from the interraction between two or more existing features to improve the model performance.
-2. Feature transformation using Weight of Evidence (WoE): This technique transforms categorical features into numerical scores, standardizes them, and make them monotonic to the target labels.
-3. Feature selection: Identify the most impactful features to include in the model.
-4. Hyperparameter tuning: Adjust the model parameters to optimize performance.
-5. Evaluation: Assess the model's performance to ensure it meets the desired criteria.
-6. Scorecard Creation: Convert the logistic regression model outputs into a scorecard format for easier interpretation and application.
+1. Target label creation
+2. Featue engineering
+3. Manual fetaure interraction.
+3. Feature transformation using Weight of Evidence (WoE).
+4. Identify the most impactful features to include in the model (feature selection).
+5. Adjust the model parameters to optimize performance (Hyperparameter tuning).
+6. Evaluation.
+7. Scorecard Creation.
 
 Each of these steps is crucial for effectively leveraging logistic regression in predictive modeling, ensuring that the final model is both accurate and practical.
 
 ## Target label creation
-Creating target labels for binary prediction may appear straightforward, but the process can be not trivial in reality. For example, in probability of default (PD) modeling, target labels are typically determined after borrowers have been on the books for a while. Many financial institutions employ a two-year performance window, meaning that ground truth labels are only confirmed 24 months after the initial snapshot of the features. This approach, while common, might not be suitable for everyone. A significant gap between the time when feature data is captured and when target labels are determined can lead to outdated or irrelevant feature data, undermining the accuracy of the model.
+Creating target labels for binary prediction may appear straightforward, but the process can be not trivial in reality. For example, in probability of default (PD) modeling, determining the definition of the ground truth label for default, such as the number of days late that constitutes default, requires careful consideration. A very short gap between the payment due date and the default designation may make the label overly sensitive, where borrowers might just forget to pay or be waiting for payday before settling their loan. Conversely, a too-wide gap can result in an imbalanced label. In summary, this process involves balancing trade-offs.
 
+Deciding on the how long the observation window is also not trivial. Target labels are typically determined after borrowers have been on the books for a while. Many financial institutions employ a two-year performance window, meaning that ground truth labels are only confirmed 24 months after the initial snapshot of the features. This approach, while common, might not be suitable for everyone. A significant gap between the time when feature data is captured and when target labels are determined can lead to outdated or irrelevant feature data, undermining the accuracy of the model. 
+
+### Rollrate analysis
+Roll rate analysis is a technique used in credit risk management to understand how loans transition between various delinquency stages over time. This method involves defining categories such as 'Current', '1-30 days past due', '31-60 days past due', and further stages up to 'written-off'. By collecting historical payment data, analysts create transition matrices for consecutive periods, each showing the percentage of accounts moving from one delinquency status to another. These matrices reveal patterns of account stability, deterioration, and recovery. For instance, high percentages remaining in the same category ('Current' to 'Current') indicate stable accounts, while shifts towards more severe delinquency suggest increasing credit risk. By analyzing these patterns, financial institutions can identify at what delinquency stage accounts rarely recover, establishing a data-driven definition of 'default'.
+
+Placeholder for exaample
+
+### Vintage analysis
 One method to determine the performnce window is to use vintage analysis. Vintage analysis is an analytical technique used in credit risk modeling to assess the performance of loans across different time periods, known as vintages. A vintage in this context refers to a group of loans issued within a specific time frame, often within a particular month. The primary goal of vintage analysis is to evaluate how loans from each vintage perform over their lifetime, allowing financial institutions to determine the optimal performance window for assessing default risks. The analysis focuses on the 'loss curve' which plots the cumulative percentage of defaults or losses against the age of the loan. By examining these curves, analysts can determine how long it typically takes for the performance of a vintage to stabilize. This stabilization point is critical as it indicates when the data becomes predictive and representative of the ultimate performance of the loans.
 
+Placeholder for example
+
 ## Feature engineering
-Placeholer
+Feature engineering involves preparing data for model training. For structured or tabular data, feature engineering can be done by transforming raw data into a format where each row corresponds to one ground truth label. This process involves aggregating values to summarize data points effectively. For numerical data, operations such as calculating the mean, median, count, sum, minimum, and maximum are common. These are often performed over specific time windows—like the last 30 days, last six months, or even the most recent values. For categorical data, we can use aggregation function such as the most recent values, the most frequent category in the last n days, the count of particular category in the last 6 months, etc. We can always be creative with how we aggragate the data.
+
+When engineering features from data, it is crucial to avoid creating leaking features. Leaking features involve using information from ground truth labels or future data, which can falsely make the model appear highly accurate when it is not. To prevent this, ensure that the timestamp of the data used for features strictly precedes the label data snapshot. For instance, in developing a Probability of Default (PD) model for a scoring system, features should be derived from data available before the application time, while the payment default flag should only be determined after the borrowers have had some history with the lender. I also tend to avoid aggregating features from the entire lifetime of the data as it could skew the model's performance. For instance, using the total sum of expenditures on a pay-later product over its entire lifetime might not be indicative of current spending behavior, as it could reflect outdated trends.
 
 ## Manual feature interraction
 Manual feature interaction involves creating new features based on combinations of existing features in the data, aiming to uncover relationships that might enhance the predictive power of our predictive models. This can be particularly useful when the interaction between variables might influence the outcome in ways not captured by the individual features alone. For example, in the case of predicting payment default, income data can be combined with the existing loan amount, forming loan to income ratio (LTI). Including LTI to the model is usually make logistic regression performs better compared to including both income and existing loan amount alone to the model. 

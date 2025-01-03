@@ -88,8 +88,22 @@ Logistic regression, while robust and widely utilized, does not incorporate boos
 
 Ensemble models that use boosting are particularly adept at handling large datasets and can effectively incorporate a greater number of predictors without a corresponding loss in performance. This capability allows these models to adapt more flexibly to complex datasets and capture subtle patterns that may be missed by simpler models like logistic regression.
 
-In contrast, logistic regression's performance is generally constrained by its linear nature and the absence of mechanisms to iteratively refine predictions based on previous errors. As a result, while logistic regression is valuable for its interpretability and efficiency, it may not achieve the same level of accuracy as boosted ensemble models when dealing with complex or large-scale data environments. This distinction is crucial for practitioners to consider when selecting the appropriate modeling approach for their specific data and analytical needs. 
+In contrast, logistic regression's performance is generally constrained by its linear nature and the absence of mechanisms to iteratively refine predictions based on previous errors. As a result, while logistic regression is valuable for its interpretability and efficiency, it may not achieve the same level of accuracy as boosted ensemble models when dealing with complex or large-scale data environments. This distinction is crucial for practitioners to consider when selecting the appropriate modeling approach for their specific data and analytical needs. At last, developing predictive models using logistic regression usually involves more manual steps compared to developing predictive models using ensemble models like gradient boosted trees.
 
-At last, developing predictive models using logistic regression usually involves more manual steps compared to developing predictivemodels using ensemble models like gradient boosted trees. Some common manual steps include introducing feature interraction, transforming predictors to align with the log-odd linearity wth the outcome, limitting the predictor variables by selecting only the best performing ones, etc. The subsequent sections explain how we can deal with the logistic regression's limitation trough manual feature interraction, WoE transformation, and feature selection.
+# Developing ABC Score Using Logistic Regression
+Developing a credit risk model with logistic regression involves numerous manual steps, as logistic regression does not inherently handle categorical features, lacks feature interaction, and can accommodate fewer features compared to more advanced models like gradient boosted trees. This section explains the process of building a predictive model using logistic regression, and subsequently converting it into a scorecard.
 
-[Previous: Introduction to ABC Scores and Stress Testing](./abc-scores-and-stress-testing-introduction.md) | [Next: Developing Predictive Model Using Logistic Regression](./modelling-lr.md)
+The steps to develop a model using logistic regression are outlined as follows:
+
+1. Target label creation
+2. Feature engineering
+3. Manual fetaure interraction.
+3. Feature transformation using Weight of Evidence (WoE).
+4. Identify the most impactful features to include in the model (feature selection).
+5. Adjust the model parameters to optimize performance (Hyperparameter tuning).
+6. Evaluation.
+7. Scorecard Creation.
+
+Each of these steps is crucial for effectively leveraging logistic regression in predictive modeling, ensuring that the final model is both accurate and practical.
+
+[Previous: Introduction to ABC Scores and Stress Testing](./abc-scores-and-stress-testing-introduction.md) | [Next: Target label creation](./target-creation.md)
