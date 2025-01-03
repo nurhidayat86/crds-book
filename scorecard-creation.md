@@ -7,7 +7,7 @@ title: Creating Scorecard From Logistic Regression Model
 nav_order: 11
 ---
 
-## Scorecard Creation
+# Scorecard Creation
 Placeholder
 
 [Previous: Model Evaluation](./model-evaluation.md)

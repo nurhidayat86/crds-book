@@ -7,12 +7,7 @@ title: Hyperparameter Tuning
 nav_order: 9
 ---
 
-## Hyperparameter tuning
-Placeholder
-
-## Evaluation
-
-## Converting logistic regression model into a scorecard
+# Hyperparameter tuning
 Placeholder
 
 [Previous: Feature Selection](./feature-selection.md) | [Next: Model Evaluation](./model-evaluation.md)
