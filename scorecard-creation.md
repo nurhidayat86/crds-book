@@ -24,4 +24,16 @@ and
 
 $$\text{offset}=\text{base score}-(\text{factor}*ln(\text{odds}))$$
 
+.  As an example, if we want to create a scorecard with the base score of 600 when the odd is 50:1, and we want to have 20 point of increase in our scorecard when the odd doubles, then:
+
+$$\text{factor}=\frac{20}{ln(2)}=28.85$$
+
+and
+
+$$\text{offset}=600-(28.85*ln(50))=487.14$$
+
+Then the formulae becomes
+
+$$\sum_{j=1}^{k} \sum_{i=1}^{n} \left( -\left( \text{woe}_j \cdot \beta_i + \frac{a}{n} \right) \cdot 28.85 + \frac{487.14}{n} \right)$$
+
 [Previous: Model Evaluation](./model-evaluation.md)
