@@ -90,10 +90,10 @@ Ensemble models that use boosting are particularly adept at handling large datas
 
 In contrast, logistic regression's performance is generally constrained by its linear nature and the absence of mechanisms to iteratively refine predictions based on previous errors. As a result, while logistic regression is valuable for its interpretability and efficiency, it may not achieve the same level of accuracy as boosted ensemble models when dealing with complex or large-scale data environments. This distinction is crucial for practitioners to consider when selecting the appropriate modeling approach for their specific data and analytical needs. At last, developing predictive models using logistic regression usually involves more manual steps compared to developing predictive models using ensemble models like gradient boosted trees.
 
-# Developing ABC Score Using Logistic Regression
-Developing a credit risk model with logistic regression involves numerous manual steps, as logistic regression does not inherently handle categorical features, lacks feature interaction, and can accommodate fewer features compared to more advanced models like gradient boosted trees. This section explains the process of building a predictive model using logistic regression, and subsequently converting it into a scorecard.
+# Developing Application Scorecard Using Logistic Regression Model
+Developing an A-score with logistic regression model involves numerous manual steps, as logistic regression does not inherently handle categorical features, lacks feature interaction, and can accommodate fewer features compared to more advanced models like gradient boosted trees. This section explains the process of building a predictive model using logistic regression, and subsequently converting it into a scorecard.
 
-The steps to develop a model using logistic regression are outlined as follows:
+The steps to develop an A-score using logistic regression model are outlined as follows:
 
 1. Target label creation
 2. Feature engineering
