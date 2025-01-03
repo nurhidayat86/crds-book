@@ -14,6 +14,14 @@ Converting a logistic regression model into a scorecard starts with the logistic
 
 In summary, the formulae to convert logistic regression model into a scorecard is shown as follow:
 
-Placeholders
+$$\sum_{j=1}^{k} \sum_{i=1}^{n} \left( -\left( \text{woe}_j \cdot \beta_i + \frac{a}{n} \right) \cdot \text{factor} + \frac{\text{offset}}{n} \right)$$
+
+where $$k$$ is the number of group in each predictor $$i$$, $$n$$ is the number of predictor, $$\beta_i$$ is the model coefficient of each predictor $$i$$, $$a$$ is the logistic regression intercept, 
+
+$$\text{factor}=\frac{PDO}{ln(2)}$$ 
+
+and 
+
+$$\text{offset}=\text{base score}-(\text{factor}*ln(\text{odds}))$$
 
 [Previous: Model Evaluation](./model-evaluation.md)
