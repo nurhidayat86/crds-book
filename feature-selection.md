@@ -4,7 +4,7 @@ math: mathjax
 # date:   2025-01-01 10:05:58 +0800
 title: Step 6 - Feature Selection
 # categories: credit risk
-nav_order: 9
+nav_order: 10
 ---
 
 # Feature selection

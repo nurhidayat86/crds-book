@@ -4,7 +4,7 @@ math: mathjax
 # date:   2025-01-01 10:05:58 +0800
 title: Step 7 - Model Training and Hyperparameter Tuning
 # categories: credit risk
-nav_order: 10
+nav_order: 11
 ---
 
 # Model Training and Hyperparameter tuning

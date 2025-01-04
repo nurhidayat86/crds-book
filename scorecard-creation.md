@@ -4,7 +4,7 @@ math: mathjax
 # date:   2025-01-01 10:05:58 +0800
 title: Step 9 - Creating Scorecard From Logistic Regression Model
 # categories: credit risk
-nav_order: 12
+nav_order: 13
 ---
 
 # Scorecard Creation
