@@ -15,12 +15,26 @@ There are various approaches to selecting meaningful features in data analysis, 
 Multivariate feature selection methods assess the performance gain of a feature when it is considered in combination with other features within a model.Examples of such methods include Recurring Feature Addition (RFA) and Recurring Feature Elimination (RFE). Notably, RFA is akin to what is known in logistic regression models as stepwise logistic regression, indicating that both methods share similar methodologies. This section explores three most commonly used feature selection techniques in logistic regression model: Information Value (IV), Area Under the Receiver Operating Characteristic (AUROC), and stepwise logistic regression. 
 
 ## Information values (IV)
-Placeholder
+IV quantifies the predictive power of a feature in relation to the target variable, i.e. default/no default. The IV is calculated by taking each category or bin of a feature, determining the proportion of good and bad outcomes within each category, and then measuring how much each category contributes to distinguishing between these outcomes across the entire range of the feature. The formulae is written as follow:
+
+$$IV = \sum_{i=1}^{n} (P_{G,i} - P_{B,i}) \cdot \log \left(\frac{P_{G,i}}{P_{B,i}}\right)$$
+
+Where $$P_{G,i}$$ is the proportion of positive (good) outcomes in the $$i$$-th group,
+$$P_{B,i}$$ is the proportion of negative (bad) outcomes in the $$i$$-th group,
+and $$n$$ is the total number of groups or bins the variable has been divided into. The result is a value in the range of 0 to 1, where higher values indicate greater predictive power. An IV less than 0.02 suggests that the feature has little predictive power, while a value above 0.3 indicates a strong predictive feature.
 
 ## Area Under the Receiver Operating Characteristic (AUROC)
-Placeholder
+AUROC is area under the curve for the following plot: True Positive Rate (TPR, also known as sensitivity) on the Y-axis against the False Positive Rate (FPR, 1 - specificity) on the X-axis at various threshold settings. AUROC provides a single scalar value that summarizes the overall ability of the test to discriminate between those cases that have the condition and those that do not across all thresholds. An AUROC value of 0.5 suggests no discriminative power (equivalent to random guessing), while a value of 1.0 indicates perfect discrimination and 0.0 indicates the opposite prediction. Values between 0.5 and 1.0 indicate varying degrees of accuracy, with values closer to 1.0 demonstrating higher effectiveness of the model in distinguishing between the positive class and the negative class, and values between 0.0 to 0.5 indicates varies degrees of accuracy, with values closer to 0.0 indicates the complete opposite prediction. The AUROC is particularly useful because it is independent of the class distribution and the decision threshold, making it a powerful metric to compare the performance of different models on the same problem or for evaluating models on problems where the class distribution may shift over time.
+
+Placeholder, AUROC graph
 
 ## Stepwise logsitic regression
-Placeholder
+Stepwise logistic regression is a method of determining the most relevant predictors for a logistic regression model. This technique iteratively adds or removes predictors based on specific criteria and tests whether these changes improve the model's performance. The most commonly used criterias are the change of AUROC or log-likelihood, correlation or Variance Inflation Factor (VIF) constrains, adjusted R-squared, etc. The stepwise method typically uses one of three approaches: forward selection, backward elimination, or a combination of both known as bidirectional elimination.
+
+In forward selection, the process starts with no variables in the model, and adds them one by one. For each step, the variable that provides the most significant improvement to the model (often measured by the highest increase in a fit statistic like AUROC, plus a constraint like maximum correlation with other existing features) is added. This continues until adding new variables no longer provides a statistically significant improvement.
+
+Backward elimination starts with all potential predictors in the model. At each step, the least significant variable (i.e., the one with the lowest change in AUROC) is removed from the model. This is repeated until only variables that have a statistically significant contribution to the model remain.
+
+The goal of using stepwise logistic regression in feature selection is to produce a parsimonious model that has better generalization capabilities by including only those variables that have a significant impact on the response variable. This helps in improving the model's predictive performance.
 
 [Previous: Weight of Evidence (WoE) Transformation](./weight-of-evidence.md) | [Next: Hyperparameter Tuning](./hyperparameter-tuning.md)
