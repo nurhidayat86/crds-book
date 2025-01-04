@@ -21,4 +21,4 @@ which means when the AUROC is between 0 and 50, the gini coefficient is negative
 Placeholder
 
 
-[Previous: Hyperparameter Tuning](./hyperparameter-tuning.md) | [Next: Creating Scorecard From Logistic Regression Model](./scorecard-creation.md)
+[Previous: Model Training and Hyperparameter Tuning](./hyperparameter-tuning.md) | [Next: Creating Scorecard From Logistic Regression Model](./scorecard-creation.md)

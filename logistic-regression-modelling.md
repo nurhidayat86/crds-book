@@ -90,21 +90,4 @@ Ensemble models that use boosting are particularly adept at handling large datas
 
 In contrast, logistic regression's performance is generally constrained by its linear nature and the absence of mechanisms to iteratively refine predictions based on previous errors. As a result, while logistic regression is valuable for its interpretability and efficiency, it may not achieve the same level of accuracy as boosted ensemble models when dealing with complex or large-scale data environments. This distinction is crucial for practitioners to consider when selecting the appropriate modeling approach for their specific data and analytical needs. At last, developing predictive models using logistic regression usually involves more manual steps compared to developing predictive models using ensemble models like gradient boosted trees.
 
-# Developing Application Scorecard Using Logistic Regression Model
-Developing an A-score with logistic regression model involves numerous manual steps, as logistic regression does not inherently handle categorical features, lacks feature interaction, and can accommodate fewer features compared to more advanced models like gradient boosted trees. This section explains the process of building a predictive model using logistic regression, and subsequently converting it into a scorecard.
-
-The steps to develop an A-score using logistic regression model are outlined as follows:
-
-1. Target label creation.
-2. Feature engineering.
-3. Manual feature interraction.
-4. Data Splitting
-5. Feature transformation using Weight of Evidence (WoE).
-6. Identify the most impactful features to include in the model (feature selection).
-7. Adjust the model parameters to optimize performance (Hyperparameter tuning).
-8. Evaluation.
-9. Scorecard Creation.
-
-Each of these steps is crucial for effectively leveraging logistic regression in predictive modeling, ensuring that the final model is both accurate and practical.
-
-[Previous: Introduction to ABC Scores and Stress Testing](./abc-scores-and-stress-testing-introduction.md) | [Next: Target label creation](./target-creation.md)
+[Previous: Introduction to ABC Scores and Stress Testing](./abc-scores-and-stress-testing-introduction.md) | [Next: Steps in Developing A-Score Using Logistic Regression Model](./steps-in-ascore-modelling.md)

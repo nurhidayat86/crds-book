@@ -4,7 +4,7 @@ math: mathjax
 # date:   2025-01-01 10:05:58 +0800
 title: Manual Feature Interraction
 # categories: credit risk
-nav_order: 6
+nav_order: 7
 ---
 
 # Manual feature interraction
@@ -14,4 +14,4 @@ There are several ways to introduce new features based on interraction, the meth
 
 For categorical data such as cities, blood type, races, etc, creating new feature from interraction typically achieved by concatenation and grouping. For instance, consider a dataset with separate columns for "City" and "Ethnicity." By concatenating these columns, entries like "Singapore" from the City column and "Caucasian" from the Ethnicity column can be merged to form a new category, "Singapore_Caucasian". Following this concatenation, categories containing few data points can be grouped together. This approach helps in reducing the granularity of the data, making the dataset more manageable and potentially enhancing model performance.
 
-[Previous: Feature Engineering](./feature-engineering.md) | [Next: Weight of Evidence (WoE) Transformation](./weight-of-evidence.md)
+[Previous: Feature Engineering](./feature-engineering.md) | [Next: Data Splitting](./data-splitting.md)

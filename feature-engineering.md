@@ -4,7 +4,7 @@ math: mathjax
 # date:   2025-01-01 10:05:58 +0800
 title: Feature Engineering
 # categories: credit risk
-nav_order: 5
+nav_order: 6
 ---
 
 # Feature engineering

@@ -4,11 +4,11 @@ math: mathjax
 # date:   2025-01-01 10:05:58 +0800
 title: Weight of Evidence (WoE) Transformation
 # categories: credit risk
-nav_order: 8
+nav_order: 9
 ---
 
 # Weight of Evidence (WoE) transformation
-The Weight of Evidence (WoE) is a data transformation used primarily in predictive modeling, particularly in the field of credit scoring and risk management. It quantifies the predictive strength of an individual predictor by comparing the distribution of goods (positive outcomes) to the distribution of bads (negative outcomes) within a categorical variable. The process involves segmenting the data into different groups based on the predictor, calculating the proportion of positive and negative outcomes for each group, and then evaluating how these proportions relate to each other across the groups.
+The Weight of Evidence (WoE) is a data transformation used primarily in predictive modeling, particularly in the field of credit scoring and risk management. It quantifies the predictive strength of an individual predictor by comparing the distribution of goods (positive outcomes) to the distribution of bads (negative outcomes) within a categorical variable. The process involves segmenting the data into different groups based on the predictor, calculating the proportion of positive and negative outcomes for each group, and then evaluating how these proportions relate to each other across the groups. Noted that this process of getting the WoE transformation calculation must strictly use the train data only (same rules to train ML models). Once the rules of transforming each segments to WoE values are obtained, only then we use these rules to transformed the predictors to WoE values in all segments (train, validation, test, and out of time samples, which is similar to model prediction).
 
 To calculate the Weight of Evidence (WoE), you can follow a systematic process beginning with data grouping. For categorical variables, utilize the existing categories and consider combining those with a low number of observations into a single category. For numerical variables, the data should be binned into discrete intervals, selecting intervals that not only maximize predictive power but also maintain monotonicity to enhance model stability. Next, calculate the proportions of non-default outcomes (goods) and default outcomes (bads) within each group. Finally, compute the odds of positive outcomes relative to negative outcomes for each group, and use the mathematical formula below to determine the WoE:
 
