@@ -10,7 +10,7 @@ nav_order: 3
 # Understanding Logistic Regression
 Logistic regression is a statistical model that is commonly used for binary classification tasks. It's elegance lies in its simplicity and interpretability, making it suitable for credit risk models such as PD model. This section explains the basic mechanics behind logistic regression.
 
-## Understanding the mathematical formulation
+## Mathematical formulation
 The foundation of logistic regression lies in its ability to estimate probabilities using a logistic function, which is an S-shaped curve also known as the sigmoid function. The logistic function models the probability that the dependent variable belongs to a particular category.
 
 For a binary classificationt ask, let $$Y$$ represents a binary target where $$Y$$ is either $$1$$ $$(True)$$ or $$0$$ $$(False)$$, and $$X$$ represents the features or predictor variables, a logistic regression model predicts the probability $$P(Y=1\|X)$$ as:
