@@ -2,7 +2,7 @@
 layout: mathjax
 math: mathjax
 # date:   2025-01-01 10:05:58 +0800
-title: Manual Feature Interraction
+title: Step 3 - Manual Feature Interraction
 # categories: credit risk
 nav_order: 7
 ---

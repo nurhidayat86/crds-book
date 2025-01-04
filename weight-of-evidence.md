@@ -2,7 +2,7 @@
 layout: mathjax
 math: mathjax
 # date:   2025-01-01 10:05:58 +0800
-title: Weight of Evidence (WoE) Transformation
+title: Step 5 - Weight of Evidence (WoE) Transformation
 # categories: credit risk
 nav_order: 9
 ---

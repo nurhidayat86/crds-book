@@ -22,6 +22,6 @@ The steps to develop an A-score using logistic regression model are outlined as 
 8. Evaluation.
 9. Scorecard Creation.
 
-Each of these steps is crucial for effectively leveraging logistic regression in predictive modeling, ensuring that the final model is both accurate and practical.
+Note that each of these steps is not always sequential, i.e. we can go back and forth if necessary. 
 
 [Previous: Understanding Logistic Regression](./logistic-regression-modelling.md) | [Next: Target label creation](./target-creation.md)

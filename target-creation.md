@@ -2,7 +2,7 @@
 layout: mathjax
 math: mathjax
 # date:   2025-01-01 10:05:58 +0800
-title: Creating Groundtruth Labels
+title: Step1 - Creating Groundtruth Labels
 # categories: credit risk
 nav_order: 5
 ---
