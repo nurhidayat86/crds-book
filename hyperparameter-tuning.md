@@ -8,7 +8,7 @@ nav_order: 10
 ---
 
 # Model Training and Hyperparameter tuning
-Model training is the process of learning the model coefficients by iteratively adjusts the parameters to better fit the model to the data. This fit is assessed by how well the predicted probabilities match the actual outcomes in the training data. Metrics like the log-loss or cross-entropy loss are commonly used to quantify the model's accuracy during training, where lower values indicate a better fit.
+Model training is the process of learning the model coefficients by iteratively adjusts the parameters to better fit the model to the data. As explained in [Understanding Logistic Regression](logistic-regression-modelling.md), this fit is assessed by how well the predicted probabilities match the actual outcomes in the training data. Metrics like the log-loss or cross-entropy loss are commonly used to quantify the model's accuracy during training, where lower values indicate a better fit.
 
 Hyperparameter tuning is the process of optimizing the parameters of a machine learning (ML) model that are not learned from the training data but set before the training process begins. It involves fine-tuning the model to achieve the best possible performance. Hyperparameter tuning is applicable to most ML models, including logistic regression. In complex ensemble models like bagging trees or gradient-boosted trees, the number of hyperparameters available for tuning can be large, necessitating advanced optimization techniques such as Bayesian optimization or random search to make the process efficient.
 
